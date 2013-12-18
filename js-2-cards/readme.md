@@ -10,7 +10,7 @@ Cards are occupying the 100% of the viewport (except for margin and navigation a
 
 You can use jQuery standard library, but no other jQuery plugin.
 
-The product should work on webkit based browsers (IE and FF support is not necessary).
+The product should work on all modern browsers (including IE 11).
 
 ---
 
