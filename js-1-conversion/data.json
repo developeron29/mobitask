@@ -38,7 +38,11 @@
 				"purchases": 50
 			}
 		},
-		"Unknonw": {
+		"Huawei": {
+			"visits": 4212,
+			"purchases": 21
+		},
+		"Unknown": {
 			"visits": 3528,
 			"purchases": 38
 		}
@@ -81,7 +85,7 @@
 			}
 		}
 	},
-    "Rest": {
+	"Unknown": {
 		"visits": 3517,
 		"purchases": 26
 	}
