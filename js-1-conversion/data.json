@@ -1,5 +1,5 @@
 {
-	"iOS": {
+    "iOS": {
 		"iPhone": {
 			"visits": 5102,
 			"purchases": 43
@@ -52,7 +52,7 @@
 			"Series 4": {
 				"visits": 4211,
 				"purchases": 49
-			},
+			}
 		},
 		"Unknown": {
 			"visits": 2704,
@@ -80,5 +80,9 @@
 				"purchases": 13
 			}
 		}
+	},
+    "Rest": {
+		"visits": 3517,
+		"purchases": 26
 	}
 }
