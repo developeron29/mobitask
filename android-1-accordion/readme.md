@@ -2,29 +2,30 @@ Develop a custom re-usable Android `View` named `com.mobihacker.views.Accordion`
 
 The view class must have the following signature for the constructor: 
 
-    class Accordion extends ... {
-    	public Accordion(Context context, JSONArray items) {
-    
-    	}
-    }
+```Java
+class Accordion extends ... {
+	public Accordion(Context context, JSONArray items) {
+
+	}
+}
+```
 
 Retrieve the `JSONArray` from the `accordion.json` file in the assets directory.
 
 This `View` will be used like this:
 
-    class Home extends Activity { 
-    	
-    	@Override
-    	protected void onCreate(Bundle savedInstanceState) {
-    		.
-    		.
-    		Accordion accordion = new Accordion(getContext(), items);
-    		addView(accordion, new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
-    		.
-    		.
-    	}	
-    		
-    }
-
-
-  
+```Java
+class Home extends Activity { 
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		.
+		.
+		Accordion accordion = new Accordion(getContext(), items);
+		addView(accordion, new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
+		.
+		.
+	}	
+		
+}
+```
