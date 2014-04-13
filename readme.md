@@ -21,7 +21,7 @@ These tasks are easy so solve, what's important for us is the quality of your co
 -- Shell or Node.js (CasperJS / PhantomJS)
 
 
-You can write your code CoffeeScript or LiveScript that compile to JavaScript.
+You can write your code in languages like CoffeeScript or LiveScript that compile to JavaScript.
 
 ---
 
