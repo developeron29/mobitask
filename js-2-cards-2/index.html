@@ -1,0 +1,42 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body onload="bodyLoad()">
+	<span id="myDiv">
+		
+<div data-role="page" id="pageone">
+	<div data-role="header" class="header"></div>
+	<div data-role="main" class="ui-content">
+   
+  </div>
+  <div data-role="footer"><a href="#" data-transition="slide">Prev</a><a href="#pagetwo" data-transition="slide">Next</a></div>
+  </div>
+
+  <div data-role="page" id="pagetwo">
+
+  <div data-role="header" class="header"></div>
+  
+  <div data-role="main" class="ui-content">
+  
+  </div>
+
+  <div data-role="footer"><a href="#pageone" data-transition="slide">Prev</a><a href="#pagethree" data-transition="slide">Next</a></div></div>
+
+  <div data-role="page" id="pagethree">
+
+  <div data-role="header" class="header"></div>
+  <div data-role="main" class="ui-content">
+  
+  </div>
+  <div data-role="footer"><a href="#pagetwo" data-transition="slide">Prev</a><a href="#" data-transition="slide">Next</a></div>
+  </div> 
+
+	</span>
+<script type="text/javascript" src="./data.js"></script>
+<script type="text/javascript" src="./j1.js"></script>
+</body>
+	
+	<link rel="stylesheet" href="./jquery.css">
+
+</html>

@@ -3,21 +3,23 @@
 <head>
 	<title>Conversion</title>
 </head>
-<body>
+<body onload='loadDoc()'>
 
-<select name="os"></select> <!-- including all, 
+<select name="os" onchange="loadBrand();findConv();"></select> <!-- including all, 
 	When os is all then brand select element should display all the brands in the dataset.
 	Otherwise brand select element should only contain the brands for the selection os. -->
-<select name="brand"></select> <!-- including all,
+<select name="brand" onchange="findConv()"></select> <!-- including all,
 	When os is all and brand is all, then conversion must be calculated for the whole dataset.
 	When os is all and brand is selected, then conversion must be calculated for that brand (note some brands are repeated under different OSes.).
 	When os is selected and brand is selected, then conversion must be calculated for the selected brand under the selected os.
  -->
 
-<div>Visits: <span data-value="visits">12,200</span></div>
-<div>Purchases: <span data-value="purchases">1431</span></div>
-<div>Conversion: <span data-value="visits">conversion = purchases / visits %</span></div>
+<div>Visits: <span data-value="visits"></span></div>
+<div>Purchases: <span data-value="purchases"></span></div>
+<div>Devices: <span data-value="device"> </span>
+<div>Conversion: <span data-value="conversion"></span></div>
 
-
+<script type="text/javascript" src="./index.js"></script>
 </body>
 </html>
+

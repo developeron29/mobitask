@@ -1,36 +1,51 @@
-# Mobihacker
+#MobiTest
 
-Hello, there are 3 JavaScript and one Android tasks here.
+--
 
-These tasks are easy so solve, what's important for us is the quality of your code.
+* ##js-1-conversion
 
----
+**To run on a local machine-**
 
-###JavaScript
+fire a server
 
-1. ***js-1-conversion***
--- Just read the source code, everything is explained there.
--- JavaScript
+if you have python v2.7.0
 
-2. ***js-2-cards***
--- Create a small app to read and display the textual content in a XML file.
--- CSS3, JavaScript
+`python -m SimpleHTTPServer`
 
-3. ***hacker-1-link***
--- Create script to check for broken links in a website.
--- Shell or Node.js (CasperJS / PhantomJS)
+for ~ python v3.0.0
 
+`python -m http.server`
 
-You can write your code in languages like CoffeeScript or LiveScript that compile to JavaScript.
+or check demo -
 
----
+[Demo](http://plnkr.co/edit/Ifgk6Q?p=preview)
 
-###Android
+-- 
+* ##js-2-cards-1/2
 
-***android-1-accordion*** 
--- Create a small Android app to read and display the textual content in a JSON file.
-*(This task is optional if you're applying only for JavaScript developer position)*
+I have two solutions for this. 
 
----
+But only **js-2-cards-2 is only in working state**
 
-Please do not the fork this repo (it's supposed to be a test!). Just download the code and create a new repo from the downloaded directory.
+To run on local machine 
+
+Shoot
+
+`python -m SimpleHTTPServer
+
+or
+
+python -m http.server`
+
+depending on your python version.
+
+[Demo](http://plnkr.co/edit/XK4jIp?p=preview)
+
+--
+
+* ##hacker-1-link
+
+run
+
+`sudo npm install
+node app.js`
