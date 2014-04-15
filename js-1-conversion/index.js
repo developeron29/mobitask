@@ -1,4 +1,4 @@
-var Converter = function () {
+var Converter = function () { // object handling options filling , calculations
 	var x = '',
 	y = '',
 	eData = [] ,
@@ -7,7 +7,7 @@ var Converter = function () {
 	visits = 0,
 	purchases = 0;
 	return {
-		osOptions : function (data) {
+		osOptions : function (data) { //fills in os options
 				x = '<option>all</option>';
 				for(var i =0 ; i < data.length ; i++) {
 					eData[data[i].os] = data[i];
@@ -15,7 +15,7 @@ var Converter = function () {
 				}
 				return x;
 		},
-		brandOptions : function (input) {
+		brandOptions : function (input) { //fills in brandOptions
 			y ='';
 			if(input == 'all') {
 				for (var j in eData) {
@@ -31,7 +31,7 @@ var Converter = function () {
 			}
 			return y;
 		},
-		optionateBrands : function (input) {
+		optionateBrands : function (input) { // brand option helpeer
 			if(input.children) {
 						for (var  k = 0 ; k < input.children.length; k++) {
 							
@@ -45,7 +45,7 @@ var Converter = function () {
 						
 					}
 		},
-		fewCalculations : function(inp1,inp2) {
+		fewCalculations : function(inp1,inp2) { //calculations
 			visits = 0;
 			purchases = 0;
 			device = [];
@@ -63,7 +63,7 @@ var Converter = function () {
 
 			return  {v: visits,p: purchases,d: device};
 		},
-		calculationHelper1 : function (inp1,test,inp2) {
+		calculationHelper1 : function (inp1,test,inp2) { //calculation helper1
 			if(test.children) {
 					for(var i=0; i < test.children.length; i++) {
 						if(test.children[i].brand == inp2){
@@ -80,7 +80,7 @@ var Converter = function () {
 							purchases += test.purchases;
 				}
 		},
-		calculationHelper2 : function (inp,inp2) {
+		calculationHelper2 : function (inp,inp2) { //calculation helper2
 			var test1 = inp.children;
 							if(test1){
 								for(var j =0; j < test1.length ; j++) {
@@ -97,10 +97,10 @@ var Converter = function () {
 	}
 };
 
-var helper = new Converter();
+var helper = new Converter(); 
 
-function loadDoc() {
-	var xmlhttp;
+function loadDoc() { //Loads on body load
+ 	var xmlhttp;
 	if(window.XMLHttpRequest) 
 	{
 		xmlhttp = new XMLHttpRequest();
@@ -118,15 +118,15 @@ function loadDoc() {
 		}
 	}
 
-	xmlhttp.open("GET","data.json",true);
+	xmlhttp.open("GET","data.json",true); // ajax request to get data from json file
 	xmlhttp.send();
 }
 
-function loadBrand () {
+function loadBrand () { //When a os is chosen
 	document.getElementsByName('brand')[0].innerHTML = helper.brandOptions(document.getElementsByName('os')[0].value);
 }
 
-function findConv () {
+function findConv () { //fills in html
 	var os = document.getElementsByName('os')[0].value;
 	var brand = document.getElementsByName('brand')[0].value;
 	var json = helper.fewCalculations(os,brand);
