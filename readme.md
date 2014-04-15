@@ -2,7 +2,7 @@
 
 --
 
-* ##js-1-conversion
+##js-1-conversion
 
 **To run on a local machine-**
 
@@ -21,7 +21,7 @@ or check demo -
 [Demo](http://plnkr.co/edit/Ifgk6Q?p=preview)
 
 -- 
-* ##js-2-cards-1/2
+##js-2-cards-1/2
 
 I have two solutions for this. 
 
@@ -31,11 +31,11 @@ To run on local machine
 
 Shoot
 
-`python -m SimpleHTTPServer
+`python -m SimpleHTTPServer`
 
 or
 
-python -m http.server`
+`python -m http.server`
 
 depending on your python version.
 
@@ -43,7 +43,7 @@ depending on your python version.
 
 --
 
-* ##hacker-1-link
+##hacker-1-link
 
 run
 
