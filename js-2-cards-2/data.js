@@ -4,7 +4,7 @@ var Composer = function() {
 	html = [];
 	return {
 		extractXML : function(node) {
-			for(var i=0; i < node.length ; i++) {
+			for(var i=0; i < node.length ; i++) { //fills in html
 					document.getElementsByClassName('header')[i].innerHTML = '<h1>'+node[i].getAttribute('title')+'</h1>';
 					document.getElementsByClassName('ui-content')[i].innerHTML = node[i].innerHTML;
 			}
@@ -16,7 +16,7 @@ var Composer = function() {
 
 var helper = new Composer();
 
-function bodyLoad() {
+function bodyLoad() { //loads on body load
 	var xmlhttp;
 	if(window.XMLHttpRequest) 
 	{
@@ -30,11 +30,11 @@ function bodyLoad() {
 		if (xmlhttp.readyState==4 && xmlhttp.status==200) {
 			var test = xmlhttp.responseXML,
 			node = test.getElementsByTagName('card');
-			helper.extractXML(node);
+			helper.extractXML(node); 
 		}
 	}
 
-	xmlhttp.open("GET","data.xml",true);
+	xmlhttp.open("GET","data.xml",true); // extract data from xml
 	xmlhttp.send();
 
 }
