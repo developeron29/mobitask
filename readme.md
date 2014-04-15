@@ -47,5 +47,5 @@ depending on your python version.
 
 run
 
-`sudo npm install
-node app.js`
+`sudo npm install`
+`node app.js`
