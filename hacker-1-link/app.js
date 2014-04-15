@@ -3,7 +3,6 @@ cheerio = require('cheerio'),
 async = require('async'),
 links = [],
 broken = [],
-true1 = [],
 linkNo = 0,
 brokenNo = 0;
 
