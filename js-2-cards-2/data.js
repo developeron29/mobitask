@@ -1,5 +1,5 @@
 
-var Composer = function() {
+var Composer = function() { // Object to extract data from xml and add it to html.
 	var  noder = [],
 	html = [];
 	return {

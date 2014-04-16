@@ -1,12 +1,12 @@
 var request = require('request'),
 cheerio = require('cheerio'),
 async = require('async'),
-links = [],
-true1 = [],
-broken = [],
-trueno = 0,
-linkNo = 0,
-brokenNo = 0;
+links = [], // Stores total links
+true1 = [], // Stores correct links
+broken = [], // Stores broken links
+trueno = 0, // stores number of correct links
+linkNo = 0, // Stores total link number
+brokenNo = 0; //Stores number of broken links.
 
 async.waterfall([ // Async helps in control-flow during asynchronous requests
 
@@ -44,15 +44,15 @@ function (links,linkNo, callback) {
 
 }, 
 function (links,linkNo,true1,trueno,brokenNo,broken,callback) {
-	console.log('Total Links: '+linkNo);
+	console.log('Total Links: '+linkNo); 
 		console.log('Broken Links: '+brokenNo);
 		console.log('Non-broken Links: '+trueno+'\n');
 		console.log('Link,Broken');
-		for(var i=0; i < brokenNo; i++){
-			console.log(broken[i],',True');
+		for(var i=0; i < brokenNo; i++){ 
+			console.log(broken[i],',True'); // Prints broken links to console
 		}
 		for(var j=0; j < trueno; j++) {
-			console.log(true1[j],',False');
+			console.log(true1[j],',False'); //Prints non-broken links to console
 		}
 		callback(null,'done');
 }
