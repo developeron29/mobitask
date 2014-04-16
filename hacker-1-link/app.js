@@ -2,7 +2,9 @@ var request = require('request'),
 cheerio = require('cheerio'),
 async = require('async'),
 links = [],
+true1 = [],
 broken = [],
+trueno = 0,
 linkNo = 0,
 brokenNo = 0;
 
@@ -15,7 +17,7 @@ async.waterfall([ // Async helps in control-flow during asynchronous requests
 		$('a').each(function () { //gets <a> tags
 			var link = $(this);
 			linkNo++;
-			links.push(link.attr('href')); //Gets links
+			links.push(link.attr('href')); //Gets links;
 		});
 		callback(null,links,linkNo);
 		
@@ -24,33 +26,33 @@ async.waterfall([ // Async helps in control-flow during asynchronous requests
 },
 function (links,linkNo, callback) {
 	brokenNo = 0;
-	for(var i=0;i<links.length;i++){
-		request(links[i], function (error, response, body) { // Calls individual links to check if broken
-
+	async.each(links, function (link, callback) {
+		request(link, function (error, response, body) { // Calls individual links to check if broken
 				if(response && response.statusCode != 200) { //Checks for broken links
 					brokenNo++; 
-					broken.push(links[i]); // appends broken links
+					broken.push(link); // appends broken links	
+				} else {
+					trueno++;
+					true1.push(link);
+					//if(response)	console.log(link,response.statusCode); - Prints status code of visited links
 				}
+				callback();
 			});
-	}
-		callback(null,links,linkNo,brokenNo,broken)
-	
+	}, function (err) {
+		callback(null,links,linkNo,true1,trueno,brokenNo,broken);
+	});	
 
 }, 
-function (links,linkNo,brokenNo,broken,callback) {
-
+function (links,linkNo,true1,trueno,brokenNo,broken,callback) {
 	console.log('Total Links: '+linkNo);
-		console.log('Broken Links: '+brokenNo+'\n');
+		console.log('Broken Links: '+brokenNo);
+		console.log('Non-broken Links: '+trueno+'\n');
 		console.log('Link,Broken');
-		for(var i = 0; i < broken.length; i++) {
-			console.log(broken[i],'True'); // Prints broken links
-			var index = links.indexOf(broken[i]);
-			if(index > -1) {
-				links.splice(index, 1); //Removes broken links from all links
-			}
-		} 
-		for(var j= 0 ; j < links.length; j++){
-			console.log(links[j],'False'); // Prints non-broken links
+		for(var i=0; i < brokenNo; i++){
+			console.log(broken[i],',True');
+		}
+		for(var j=0; j < trueno; j++) {
+			console.log(true1[j],',False');
 		}
 		callback(null,'done');
 }
